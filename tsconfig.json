@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/", // то куда производится сборка
+    "noImplicitAny": true, // только явное указание типов
+    "module": "ESNext", // модульная система
+    "target": "es5", // во что компилирует
+    "jsx": "react-jsx", // для jsx разметки
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true, // для export default
+    "esModuleInterop": true, //для работы с обычными import/export, где необходим require/module.export(common js)
+    "baseUrl": "."
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
