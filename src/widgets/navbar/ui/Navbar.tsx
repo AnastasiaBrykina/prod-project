@@ -1,3 +1,4 @@
+import { SwitchThemeButton } from 'features/switchTheme';
 import cls from './Navbar.module.scss';
 import { classNames } from 'shared/lib';
 import { AppLink, AppLinkTheme } from 'shared/ui';
@@ -11,6 +12,7 @@ export const Navbar = (props: NavbarProps) => {
 
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
+      <SwitchThemeButton />
       <div className={classNames(cls.links)}>
         <AppLink to={'/'} className={classNames(cls.link)}>
           Главная
