@@ -12,7 +12,6 @@ export const Navbar = (props: NavbarProps) => {
 
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
-      <SwitchThemeButton />
       <div className={classNames(cls.links)}>
         <AppLink to={'/'} className={classNames(cls.link)}>
           Главная
