@@ -1,7 +1,6 @@
-import { SwitchThemeButton } from 'features/switchTheme';
 import cls from './Navbar.module.scss';
 import { classNames } from 'shared/lib';
-import { AppLink, AppLinkTheme } from 'shared/ui';
+import { AppLink } from 'shared/ui';
 
 interface NavbarProps {
   className?: string;

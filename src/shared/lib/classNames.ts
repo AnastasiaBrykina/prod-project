@@ -1,5 +1,3 @@
-import { validate } from 'webpack';
-
 type Mods = Record<string, boolean | string>;
 
 export const classNames = (
