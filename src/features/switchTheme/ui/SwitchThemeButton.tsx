@@ -1,5 +1,4 @@
 import { classNames, useTheme, Theme } from 'shared/lib';
-import cls from './SwitchThemeButton.module.scss';
 import Light from 'shared/ui/assets/icons/Light.svg';
 import Dark from 'shared/ui/assets/icons/Dark.svg';
 import { Button, ThemeButton } from 'shared/ui';
@@ -14,7 +13,7 @@ export const SwitchThemeButton = (props: SwitchThemeButtonProps) => {
 
   return (
     <Button
-      className={classNames(cls.switchThemeButton, {}, [className])}
+      className={classNames('', {}, [className])}
       onClick={toggleTheme}
       theme={ThemeButton.CLEAR}
     >
