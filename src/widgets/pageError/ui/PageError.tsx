@@ -17,7 +17,7 @@ export const PageError = (props: PageLoaderProps) => {
     <div className={classNames(cls.pageError, {}, [className])}>
       <p className={cls.textError}>{t('anyError')}</p>
       <Button onClick={() => location.replace(RoutePath[AppRoutes.MAIN])}>
-        {t('toMainPAge')}
+        {t('toMainPage')}
       </Button>
     </div>
   );
