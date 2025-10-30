@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci # зависимости
-      - run: nmp run build:prod # прод сборка
+      - run: npm run build:prod # прод сборка
       - run: npm run lint:ts # линтинг ts файлов
       - run: npm run lint:scss # линтинг стилей
       - run: npm run test:unit # модульные тесты
