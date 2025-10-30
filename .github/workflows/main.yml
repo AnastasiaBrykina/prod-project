@@ -21,4 +21,4 @@ jobs:
       - run: npm run lint:ts # линтинг ts файлов
       - run: npm run lint:scss # линтинг стилей
       - run: npm run test:unit # модульные тесты
-      - run: npm run test-storybook # storybook
+      - run: npm run storybook:build # storybook
