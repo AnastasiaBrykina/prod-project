@@ -1,18 +1,24 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: linting, testing, building
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
-  Explore-GitHub-Actions:
+  pipeline: # имя джобы
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v5
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - uses: actions/checkout@v4 # клонирую репозиторий
+      - name: Staring Node.js ${{ matrix.node-version }} # устанавливаю Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci # зависимости
+      - run: nmp run build:prod # прод сборка
+      - run: npm run lint:ts # линтинг ts файлов
+      - run: npm run lint:scss # линтинг стилей
+      - run: npm run test:unit # модульные тесты
+      - run: npm run build-storybook # сборка storybook
