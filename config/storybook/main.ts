@@ -17,7 +17,7 @@ const config: StorybookConfig = {
     if (config && config.resolve) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        'shared/lib': path.resolve(__dirname, '../../src/shared/lib'),
+        shared: path.resolve(__dirname, '../../src/shared'),
       };
       return config;
     }
