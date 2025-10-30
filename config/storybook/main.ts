@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -12,6 +13,17 @@ const config: StorybookConfig = {
     ...config,
     __IS_DEV__: 'true',
   }),
+  webpackFinal: async (config) => {
+    if (config && config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'shared/lib': path.resolve(__dirname, '../../src/shared/lib'),
+      };
+      return config;
+    }
+
+    return config;
+  },
 };
 
 export default config;
