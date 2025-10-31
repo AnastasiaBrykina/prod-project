@@ -1,1 +1,1 @@
-export { RenderWithTranslation } from './RenderWithTranslation';
+export { ComponentRender } from './ComponentRender';
