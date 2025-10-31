@@ -1,0 +1,33 @@
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text {
+  opacity: 1;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+.icon {
+  fill: var(--primary-color);
+}
+
+.collapsed {
+  opacity: 0;
+  width: 0;
+}
+
+.justifyContent {
+  justify-content: center;
+  gap: 0;
+}

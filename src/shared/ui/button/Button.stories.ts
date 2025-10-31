@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { fn } from 'storybook/test';
-import { Button, ThemeButton } from './Button';
+import { Button, SizeButton, ThemeButton } from './Button';
 
 const meta = {
   title: 'shared/Button',
@@ -22,6 +22,13 @@ export const Primary: Story = {
   },
 };
 
+export const Secondary: Story = {
+  args: {
+    children: 'Тест',
+    theme: ThemeButton.SECONDARY,
+  },
+};
+
 export const Clear: Story = {
   args: {
     children: 'Тест',
@@ -33,5 +40,19 @@ export const Outline: Story = {
   args: {
     children: 'Тест',
     theme: ThemeButton.OUTLINE,
+  },
+};
+
+export const Small: Story = {
+  args: {
+    children: 'Тест',
+    size: SizeButton.S,
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Тест',
+    size: SizeButton.L,
   },
 };
